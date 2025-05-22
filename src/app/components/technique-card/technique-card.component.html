@@ -1,0 +1,35 @@
+<div class="card" [class.active]="true">
+  <h3>{{ technique?.fullName }}</h3>
+  <div class="values-container">
+    <div class="value-group">
+      <label>kV</label>
+      <input type="number" [(ngModel)]="technique!.kV" [disabled]="!isEditing">
+    </div>
+    <div class="value-group">
+      <label>mAs</label>
+      <input type="number" [(ngModel)]="technique!.mAs" [disabled]="!isEditing">
+    </div>
+    <div class="value-group">
+      <label>mA</label>
+      <input type="number" [(ngModel)]="technique!.mA" [disabled]="!isEditing">
+    </div>
+    <div class="value-group">
+      <label>Distância (cm)</label>
+      <input type="number" [(ngModel)]="technique!.distance" [disabled]="!isEditing">
+    </div>
+  </div>
+  <div class="button-group">
+    <button class="edit-btn" (click)="toggleEdit()" *ngIf="!isEditing">
+      <i class="material-icons">edit</i> Editar
+    </button>
+    <button class="save-btn" (click)="saveChanges()" *ngIf="isEditing">
+      <i class="material-icons">save</i> Salvar
+    </button>
+    <button class="cancel-btn" (click)="cancelEdit()" *ngIf="isEditing">
+      <i class="material-icons">cancel</i> Cancelar
+    </button>
+    <button class="delete-btn" (click)="deleteTechnique()">
+      <i class="material-icons">delete</i> Excluir
+    </button>
+  </div>
+</div>

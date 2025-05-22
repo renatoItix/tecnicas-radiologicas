@@ -1,0 +1,55 @@
+<div class="modal" *ngIf="true">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3>Adicionar Nova Técnica</h3>
+      <button class="close-modal-btn" (click)="onClose()">
+        <i class="material-icons">close</i>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="form-group">
+        <label for="technique-name">Nome da Técnica</label>
+        <input type="text" id="technique-name" [(ngModel)]="newTechnique.name" placeholder="Ex: Joelho - AP Oblíqua">
+      </div>
+      <div class="form-group">
+        <label for="technique-category">Categoria</label>
+        <select id="technique-category" [(ngModel)]="newTechnique.category">
+          <option value="torax">Tórax</option>
+          <option value="membros-superiores">Membros Superiores</option>
+          <option value="membros-inferiores">Membros Inferiores</option>
+          <option value="coluna">Coluna</option>
+          <option value="cranio">Crânio</option>
+          <option value="abdome">Abdome</option>
+          <option value="bacia">Bacia</option>
+          <option value="especialidades">Especialidades</option>
+        </select>
+      </div>
+      <div class="values-container">
+        <div class="form-group">
+          <label for="technique-kv">kV</label>
+          <input type="number" id="technique-kv" [(ngModel)]="newTechnique.kV" placeholder="Ex: 70">
+        </div>
+        <div class="form-group">
+          <label for="technique-mas">mAs</label>
+          <input type="number" id="technique-mas" [(ngModel)]="newTechnique.mAs" placeholder="Ex: 12">
+        </div>
+        <div class="form-group">
+          <label for="technique-ma">mA</label>
+          <input type="number" id="technique-ma" [(ngModel)]="newTechnique.mA" placeholder="Ex: 200">
+        </div>
+        <div class="form-group">
+          <label for="technique-distance">Distância (cm)</label>
+          <input type="number" id="technique-distance" [(ngModel)]="newTechnique.distance" placeholder="Ex: 100">
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="cancel-btn" (click)="onClose()">
+        <i class="material-icons">cancel</i> Cancelar
+      </button>
+      <button class="save-btn" (click)="onSave()">
+        <i class="material-icons">save</i> Salvar
+      </button>
+    </div>
+  </div>
+</div>

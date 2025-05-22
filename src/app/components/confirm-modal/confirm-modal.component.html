@@ -1,0 +1,21 @@
+<div class="modal" *ngIf="true">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3>Confirmar Exclusão</h3>
+      <button class="close-modal-btn" (click)="onClose()">
+        <i class="material-icons">close</i>
+      </button>
+    </div>
+    <div class="modal-body">
+      <p>{{ message }}</p>
+    </div>
+    <div class="modal-footer">
+      <button class="cancel-btn" (click)="onClose()">
+        <i class="material-icons">cancel</i> Cancelar
+      </button>
+      <button class="delete-btn" (click)="onConfirm()">
+        <i class="material-icons">delete</i> Excluir
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+<nav>
+  <div class="nav-header">
+    <i class="material-icons">biotech</i>
+    <h2>Incidências</h2>
+  </div>
+  
+  <ul>
+    <!-- Tórax -->
+    <li class="main-item" (click)="toggleSubmenu('torax')" [class.active]="openSubmenu === 'torax'">
+      <span>Tórax</span>
+      <span class="material-icons arrow">{{ openSubmenu === 'torax' ? 'expand_more' : 'chevron_right' }}</span>
+    </li>
+    <ul id="submenu-torax" class="submenu" [class.open]="openSubmenu === 'torax'">
+      <li *ngFor="let tech of techniques['torax']" 
+          (click)="selectTechnique(tech.id)">
+        {{ tech.name }}
+      </li>
+    </ul>
+  </ul>
+</nav>
