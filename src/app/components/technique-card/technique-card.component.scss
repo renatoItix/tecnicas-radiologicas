@@ -1,13 +1,13 @@
 .card {
   background: white;
   padding: 2rem;
-  margin-bottom: 1.5rem;
-  border-radius: 8px;
+//   margin-bottom: 1.5rem;
+  border-radius:18px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
   display: none;
   border-left: 4px solid #0066cc;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  height: 450px;
+  height: 285px;
 
   &:hover {
     transform: translateY(-3px);
