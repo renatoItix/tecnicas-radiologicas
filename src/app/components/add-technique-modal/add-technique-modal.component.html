@@ -51,6 +51,9 @@
       </div>
     </div>
     <div class="modal-footer">
+      <button class="cancel-btn" (click)="close.emit()">
+        <mat-icon>cancel</mat-icon> Cancelar
+      </button>
       <button class="add-btn" (click)="onSave()">
         <mat-icon>add</mat-icon> Adicionar
       </button>

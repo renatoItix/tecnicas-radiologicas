@@ -60,6 +60,21 @@
   }
 }
 
+.form-input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 2px solid #333; /* borda padrão */
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-input:focus {
+  border-color: #42a5f5; /* azul claro */
+  box-shadow: 0 0 0 3px rgba(66, 165, 245, 0.2); /* efeito de foco elegante */
+}
+
 .form-section {
   margin-bottom: 32px;
 }
@@ -112,6 +127,94 @@
   color: #777;
 }
 
+.modal-header {
+  background: linear-gradient(135deg, #3f51b5, #5c6bc0);
+  color: #fff;
+  padding: 20px 24px;
+  position: relative;
+  height: 64px; /* altura fixa para alinhar tudo */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Título centralizado absolutamente */
+.modal-title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  font-weight: 600;
+  font-size: 1.4rem;
+  user-select: none;
+  white-space: nowrap;
+}
+
+/* Botão fechar à direita, sem afetar a centralização */
+.close-btn {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  font-size: 24px;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s ease;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 16px 24px;
+  background-color: #f9f9f9;
+  border-top: 1px solid #e0e0e0;
+}
+
+.cancel-btn {
+  background-color:#575353;;
+  color: white;
+  border: 1px solid #ccc;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.cancel-btn:hover {
+  background-color: #504949;
+  color: white;
+}
+
+.add-btn {
+  background-color: #3f51b5;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: background-color 0.2s ease;
+}
+
+.add-btn:hover {
+  background-color: #303f9f;
+}
+
+.close-btn:hover {
+  color: #ff5252;
+}
 .add-btn {
   background-color: #1976d2;
   color: #fff;
