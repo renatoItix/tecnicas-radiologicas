@@ -1,7 +1,7 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Output, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { MatIconModule } from '@angular/material/icon'; // ✅ Importação corrigida
+import { MatIconModule } from '@angular/material/icon'; 
 
 interface Technique {
   name: string;
@@ -15,13 +15,14 @@ interface Technique {
 @Component({
   selector: 'app-add-technique-modal',
   standalone: true,
-  imports: [CommonModule, FormsModule, MatIconModule], // ✅ MatIconModule incluído corretamente
+  imports: [CommonModule, FormsModule, MatIconModule], 
   templateUrl: './add-technique-modal.component.html',
   styleUrls: ['./add-technique-modal.component.scss']
 })
-export class AddTechniqueModalComponent {
+export class AddTechniqueModalComponent implements AfterViewInit {
   @Output() close = new EventEmitter<void>();
   @Output() save = new EventEmitter<Technique>();
+  @ViewChild('nameInput') nameInputRef!: ElementRef;
 
   categories = [
     { value: 'torax', label: 'Tórax' },
@@ -42,6 +43,12 @@ export class AddTechniqueModalComponent {
     mA: null,
     distance: null
   };
+
+   ngAfterViewInit() {
+    setTimeout(() => {
+      this.nameInputRef?.nativeElement?.focus();
+    });
+  }
 
   onSave() {
     if (this.isFormValid()) {
