@@ -4,3 +4,13 @@
     <i class="material-icons">add</i> Nova Técnica
   </button>
 </header>
+
+<!-- Seu conteúdo principal aqui -->
+
+<!-- Modal de adição de técnica -->
+<app-add-technique-modal 
+  *ngIf="showAddTechniqueModal"
+  (close)="closeModal()"
+  (save)="saveTechnique($event)">
+</app-add-technique-modal>
+

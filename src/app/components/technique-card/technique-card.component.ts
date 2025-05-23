@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, ElementRef, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { TechniqueModel } from '../../models/technique.model';
@@ -13,24 +13,29 @@ import { TechniqueModel } from '../../models/technique.model';
 export class TechniqueCardComponent {
   @Input() technique: TechniqueModel | null = null;
   @Output() delete = new EventEmitter<TechniqueModel>();
+  @ViewChild('kVInput') kVInput!: ElementRef<HTMLInputElement>;
   
   isEditing = false;
   originalValues: Partial<TechniqueModel> = {};
 
-  toggleEdit() {
-    if (!this.technique) return;
-    
-    if (!this.isEditing) {
-      this.originalValues = {
-        kV: this.technique.kV,
-        mAs: this.technique.mAs,
-        mA: this.technique.mA,
-        distance: this.technique.distance
-      };
-    }
-    
-    this.isEditing = !this.isEditing;
+ toggleEdit() {
+  if (!this.technique) return;
+
+  if (!this.isEditing) {
+    this.originalValues = {
+      kV: this.technique.kV,
+      mAs: this.technique.mAs,
+      mA: this.technique.mA,
+      distance: this.technique.distance
+    };
   }
+  this.isEditing = !this.isEditing; // Habilita os campos
+  if (this.isEditing) {
+    setTimeout(() => {
+      this.kVInput.nativeElement.focus();
+    });
+  }
+}
 
   saveChanges() {
     this.isEditing = false;

@@ -3,7 +3,7 @@
   <div class="values-container">
     <div class="value-group">
       <label>kV</label>
-      <input type="number" [(ngModel)]="technique!.kV" [disabled]="!isEditing">
+      <input #kVInput type="number" [(ngModel)]="technique!.kV" [disabled]="!isEditing">
     </div>
     <div class="value-group">
       <label>mAs</label>
